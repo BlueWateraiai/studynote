@@ -49,3 +49,18 @@ def new_entry(request, topic_id):
             return HttpResponseRedirect(reverse('topic', args=[topic_id]))
     context = {'form': form, 'topic':topic}
     return render(request,'new_entry.html',context)
+
+def edit_entry(request, entry_id):
+    """编辑已有的条目"""
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+
+    if request.method != 'POST':
+        form = EntryForm(instance=entry)
+    else:
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('topic', args=[topic.id]))
+    context = {'form': form, 'topic':topic, 'entry':entry}
+    return render(request,'edit_entry.html',context)
