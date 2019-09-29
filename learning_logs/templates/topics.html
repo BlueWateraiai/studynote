@@ -1,15 +1,18 @@
 {% extends "base.html" %}
-
+{% load bootstrap3 %}
+{% block header %}
+    <h1>主题列表</h1>
+{% endblock header %}
 {% block content %}
-    <p>Topics</p>
-    <ul>
+     <h3><a href="{% url 'learning_logs:new_topic'%}">增加新主题</a></h3>
      {% for topic in topics%}
-         <li>
-            <a href="{% url 'learning_logs:topic' topic.id %}"> {{topic.text}}</a>
-         </li>
+         <div class="list-group">
+             <h3 class="list-group-item-heading">
+                 <a href="{% url 'learning_logs:topic' topic.id %}" class="list-group-item">{{topic.text}}</a>
+             </h3>
+         </div>
          {% empty %}
-         <li>no topics</li>
+         <li>还没添加任何主题</li>
      {% endfor %}
-    </ul>
-    <a href="{% url 'learning_logs:new_topic'%}">add a new topic</a>
+
 {% endblock content %}

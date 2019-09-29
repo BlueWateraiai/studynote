@@ -1,5 +1,15 @@
     {% extends "base.html" %}
 
+    {% block header %}
+        <div class="jumbotron">
+          <h1>开启你的学习之旅.</h1>
+        </div>
+    {% endblock header %}
     {% block content %}
-        <p>this is learning log</p>
+        <h2>
+            <a href="{% url 'users:register'%}">注册一个账户</a>，来获得自己的学习笔记本，可以通过它记载你学过的内容
+        </h2>
+        <h2>
+           你可以新建主题，在主题中新建条目，所有的这些只属于你。
+        </h2>
     {% endblock content %}

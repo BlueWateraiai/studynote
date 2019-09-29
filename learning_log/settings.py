@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     #my app
     'learning_logs',
     'users',
+    #第三方应用程序
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'learning_log/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,3 +126,8 @@ STATIC_URL = '/static/'
 
 #我的设置
 LOGIN_URL='/users/login/'
+
+#bootstrap3的设置
+BOOTSTRAP3= {
+    'include_jquery':True,
+}
