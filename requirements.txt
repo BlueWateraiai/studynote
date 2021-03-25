@@ -46,7 +46,7 @@ pyquery==1.4.0
 pytesseract==0.2.7
 python-dateutil==2.8.0
 pytz==2019.1
-PyYAML==5.1.2
+PyYAML==5.4
 qt5reactor==0.5
 redis==3.2.1
 redis-dump-load==1.1
