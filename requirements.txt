@@ -59,7 +59,7 @@ sqlparse==0.3.0
 tblib==1.4.0
 tesserocr==2.4.0
 tornado==4.5.3
-Twisted==19.2.1
+Twisted==22.10.0
 urllib3==1.25.3
 virtualenv==16.6.0
 WechatRobots==1.0.4
